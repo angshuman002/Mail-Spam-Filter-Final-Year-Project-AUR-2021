@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Spam Mail Filter</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="icon" type="image/png" href="images/icon/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body>
+	
+	<div class="limiter">
+		<div class="container-spam100" style="background-image: url('images/img1.jpg');">
+			<div class="wrap-spam100">
+				<form class="spam100-form" action="{{ url_for('predict')}}" method="POST" >
+
+                <center>
+
+					<span class="spam100-form-title">
+						Spam Mail Filter 
+					</span>
+
+					
+					
+					<div class="warp-text100">
+						<span class="txt1">
+							Put Your Message
+						</span>
+					</div>
+
+					<div class="wrap-input100" data-validate = "spam-filter is required"><!-------------INPUT------>
+						<input class="input100" type="text" name="spam-filter" required="" placeholder="text here">
+						<span class="focus-input100"></span>
+					</div>
+					
+
+                    <div class="container-spam100-form-btn"><!-------------SUBMIT------------>
+						<button class="spam100-form-btn" type="Submit" >
+							Filter
+						</button>
+					</div>
+
+
+					<div class="warp-text100">
+						<span class="txt1">
+							Status Output
+						</span>	
+					</div>
+
+
+					<div class="wrap-output100" data-validate = "spam-output is required"><!-------------OUTPUT---->
+						<button class="output100" disabled=""></button>
+						{% if prediction == 1%}
+						<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>
+						{% elif prediction == 0%}
+						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
+						{% endif %}
+					</div>
+                
+                    <div class="warp-text100">
+						<span class="txt1">
+							Final Year Project | ASET | AUR 2021 
+						</span>
+					</div>
+
+                </center>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
