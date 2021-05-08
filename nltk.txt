@@ -1,3 +1,7 @@
 wordnet
 pros_cons
+<<<<<<< HEAD
 reuters
+=======
+reuters
+>>>>>>> db9f20aac9163be3c99d6e650c6e01b8f532f06d
