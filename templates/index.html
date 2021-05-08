@@ -5,7 +5,7 @@
 	<title>Spam Mail Filter</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<link rel="icon" type="image/png" href="images/icon/favicon.png"/>
+	<link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" type="text/css" href="static/style.css">
 
 </head>
@@ -13,9 +13,9 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-spam100" style="background-image: url('images/img1.jpg');">
+		<div class="container-spam100" style="background-image: url('background.jpg'); background-color: #505451;">
 			<div class="wrap-spam100">
-				<form class="spam100-form" action="{{ url_for('predict')}}" method="POST" >
+				<form action="{{ url_for('predict')}}" method="POST" class="spam100-form" >
 
                 <center>
 
@@ -32,8 +32,7 @@
 					</div>
 
 					<div class="wrap-input100" data-validate = "spam-filter is required"><!-------------INPUT------>
-						<input class="input100" type="text" name="spam-filter" required="" placeholder="text here">
-						<span class="focus-input100"></span>
+						<input class="input100" type="text" name="message" required="" placeholder="text here">
 					</div>
 					
 
