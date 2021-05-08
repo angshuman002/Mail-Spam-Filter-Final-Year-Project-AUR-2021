@@ -13,7 +13,7 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-spam100" style="background-image: url('background.jpg'); background-color: #505451;">
+		<div class="container-spam100" style="background-image: url('background.png'); background-color: #505451;">
 			<div class="wrap-spam100">
 				<form action="{{ url_for('predict')}}" method="POST" class="spam100-form" >
 
@@ -31,18 +31,21 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100" data-validate = "spam-filter is required"><!-------------INPUT------>
+					<div class="wrap-input100" data-validate = "spam-filter is required">
 						<input class="input100" type="text" name="message" required="" placeholder="text here">
+						<span class="focus-input100"></span>
 					</div>
 					
 
-                    <div class="container-spam100-form-btn"><!-------------SUBMIT------------>
+                    <div class="container-spam100-form-btn">
 						<div class="spam100-form-btn">
 							<input type="Submit" value="Filter" 
 							style="font-family:'Prompt', sans-serif;
 							font-size: 26px; 
 							color: #fff;
-							background:transparent;">
+							background:transparent;
+							height:100%;
+							width: 100%">
 						</div>
 					</div>
 
@@ -56,7 +59,7 @@
 					</div>
 
 
-					<div class="wrap-output100" data-validate = "spam-output is required"><!-------------OUTPUT---->
+					<div class="wrap-output100" data-validate = "spam-output is required">
 						<button class="output100" disabled=""></button>
 						{% if prediction == 1%}
 						<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>
