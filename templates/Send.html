@@ -62,15 +62,16 @@
 					<div class="wrap-output100" data-validate = "spam-output is required">
 						<button class="output100" disabled=""></button>
 						
+						<p class="output100" id="spam" disabled="" style="color: red;">Message</p>
+						<p class="output100" id="non-spam" disabled="" style="color: green;">Message</p>
+						
 						{% if prediction == 1%}
-		
-						<p class="output100" id="spam" disabled="" style="color: red;"></p>
-						<script>myspam();</script>
+						
+		                                <script>myspam();</script>
 						<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>
 						
 						{% elif prediction == 0%}
 						
-						<p class="output100" id="non-spam" disabled="" style="color: green;"></p>
 						<script>mynonspam();</script>
 						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
 						
@@ -112,8 +113,7 @@
 	</div>
 	
         <script type="text/javascript">
-	        myspam();
-		mynonspam();
+	        
 		function myspam()
 		{
 		var b = document.getElementById('inputmessage').value;
