@@ -8,7 +8,7 @@ cv=pickle.load(open('tranform.pkl','rb'))
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def send():
 	return render_template('Send.html')
 
 @app.route('/predict',methods=['POST'])
@@ -18,7 +18,15 @@ def predict():
 		data = [message]
 		vect = cv.transform(data).toarray()
 		my_prediction = clf.predict(vect)
-	return render_template('Box.html',prediction = my_prediction)
+	return render_template('Send.html',prediction = my_prediction)
+
+@app.route('/home')
+def home():
+	return render_template('Home.html')
+
+@app.route('/box')
+def box():
+	return render_template('Box.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
