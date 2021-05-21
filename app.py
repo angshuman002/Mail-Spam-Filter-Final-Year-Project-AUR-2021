@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return render_template('Send.html')
+	return render_template('Home.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -18,7 +18,7 @@ def predict():
 		data = [message]
 		vect = cv.transform(data).toarray()
 		my_prediction = clf.predict(vect)
-	return render_template('Send.html',prediction = my_prediction)
+	return render_template('Box.html',prediction = my_prediction)
 
 if __name__ == '__main__':
 	app.run(debug=True)
