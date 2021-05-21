@@ -7,7 +7,11 @@ clf = pickle.load(open(filename, 'rb'))
 cv=pickle.load(open('tranform.pkl','rb'))
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/Home.html')
+def home():
+	return render_template('Home.html')
+
+@app.route('/Send.html')
 def send():
 	return render_template('Send.html')
 
@@ -20,11 +24,7 @@ def predict():
 		my_prediction = clf.predict(vect)
 	return render_template('Send.html',prediction = my_prediction)
 
-@app.route('/home')
-def home():
-	return render_template('Home.html')
-
-@app.route('/box')
+@app.route('/Box.html')
 def box():
 	return render_template('Box.html')
 
