@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	<title>Spam Mail Filter</title>
+	<title>Pi-Mail | Send</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<link rel="icon" type="image/png" href="favicon.png"/>
@@ -23,7 +23,16 @@
 						Spam Mail Filter 
 					</span>
 
-					
+					<div class="warp-text100">
+						<span class="txt1">
+							To
+						</span>
+					</div>
+
+					<div class="wrap-input100" data-validate = "spam-filter is required">
+						<input class="input100" type="text" id="inputmessage" required="" placeholder="Enter Your Name">
+						<span class="focus-input100"></span>
+					</div>
 					
 					<div class="warp-text100">
 						<span class="txt1">
@@ -32,14 +41,14 @@
 					</div>
 
 					<div class="wrap-input100" data-validate = "spam-filter is required">
-						<input class="input100" type="text" name="message" required="" placeholder="text here">
+						<input class="input100" type="text" id="inputmessage" name="message" required="" placeholder="Enter Your Message">
 						<span class="focus-input100"></span>
 					</div>
 					
 
                     <div class="container-spam100-form-btn">
 						<div class="spam100-form-btn">
-							<input type="Submit" value="Filter" 
+							<input type="Submit" value="Send" 
 							style="font-family:'Prompt', sans-serif;
 							font-size: 26px; 
 							color: #fff;
@@ -50,24 +59,44 @@
 					</div>
 
 
-
-
-					<div class="warp-text100">
-						<span class="txt1">
-							Status Output
-						</span>	
-					</div>
-
-
 					<div class="wrap-output100" data-validate = "spam-output is required">
 						<button class="output100" disabled=""></button>
 						{% if prediction == 1%}
-						<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>
+						<!--<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>-->
+						<script type="text/javascript">
+							var b = document.getElementById('inputmessage').value
+                            document.getElementById('spam').innerHTML = b;
+						</script>
 						{% elif prediction == 0%}
-						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
+						<!--<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>-->
+						<script type="text/javascript">
+							var b = document.getElementById('inputmessage').value
+                            document.getElementById('non-spam').innerHTML = b;
+						</script>
 						{% endif %}
 					</div>
                 
+
+                    <div class="container-spam100-form-btn">
+						<div class="spam100-form-btn">
+
+							<a href="Home.html" 
+							style="font-family:'Prompt', sans-serif;
+							font-size: 26px; 
+							color: #fff;
+							background:transparent;
+							height:100%;
+							text-decoration:none;
+							text-align: center;
+							width: 100%;
+							padding-top:8px;
+							padding-bottom:-5px;">Back</a>
+
+						</div>
+					</div>
+
+
+
                     <div class="warp-text100">
 						<span class="txt1">
 							Final Year Project | ASET | AUR 2021 
