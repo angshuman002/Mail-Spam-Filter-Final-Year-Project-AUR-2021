@@ -63,15 +63,17 @@
 						<button class="output100" disabled=""></button>
 						{% if prediction == 1%}
 						<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>
+						<p id="spam">text</p>
 						<script type="text/javascript">
 							var b = document.getElementById('inputmessage').value
-                            document.getElementById('spam').innerHTML = b;
+                                                        document.getElementById('spam').innerHTML = b;
 						</script>
 						{% elif prediction == 0%}
 						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
+						<p id="non-spam">text</p>
 						<script type="text/javascript">
 							var b = document.getElementById('inputmessage').value
-                            document.getElementById('non-spam').innerHTML = b;
+                                                        document.getElementById('non-spam').innerHTML = b;
 						</script>
 						{% endif %}
 					</div>
