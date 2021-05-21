@@ -67,12 +67,22 @@
 						
 						{% if prediction == 1%}
 						
-		                                <script>myspam();</script>
+		                                <script>
+						
+							var b = document.getElementById('inputmessage').value;
+                                                        document.getElementById('spam').innerHTML = b;
+						
+						</script>
 						<button class="output100" disabled="" style="color: red;">This is a Spam Message!</button>
 						
 						{% elif prediction == 0%}
 						
-						<script>mynonspam();</script>
+						<script>
+						
+						        var b = document.getElementById('inputmessage').value;
+                                                        document.getElementById('non-spam').innerHTML = b;
+							
+						</script>
 						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
 						
 						{% endif %}
@@ -111,23 +121,6 @@
 			</div>
 		</div>
 	</div>
-	
-        <script type="text/javascript">
-	        
-		function myspam()
-		{
-		var b = document.getElementById('inputmessage').value;
-                document.getElementById('spam').innerHTML = b;
-		}
-		
-		function mynonspam()
-		{
-		var b = document.getElementById('inputmessage').value;
-                document.getElementById('non-spam').innerHTML = b;
-		}
-	
-		
-	</script>
 	
 </body>
 </html>
