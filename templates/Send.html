@@ -126,7 +126,7 @@
 							
 						console.log("Page is Ready");
 							
-						var mydata = "This is a Spam Message :";
+						var mydata = "This is a Spam Message By";
 							
 						save_value.onclick=function()
 						{	
@@ -134,7 +134,7 @@
                                                 for (var i = 0; i < input.length; i++) 
 						{
                                                   var a = input[i];
-                                                  mydata = mydata + a.value + " " + ":" + " " ;
+                                                  mydata = mydata + " " +  a.value + " " + ":" + " " ;
 					        }
 							
 						localStorage.setItem("spam",mydata);
