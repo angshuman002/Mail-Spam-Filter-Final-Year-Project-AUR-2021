@@ -85,6 +85,28 @@
 						</div>
 					</div>
 
+	      <!--Refresh line-->	
+					
+					<div class="container-spam100-form-btn">
+						<div class="spam100-form-btn">
+
+							<button  onclick="Rfs()"
+							style="font-family:'Prompt', sans-serif;
+							font-size: 26px; 
+							color: #fff;
+							background:transparent;
+							height:100%;
+							text-decoration:none;
+							text-align: center;
+							width: 100%;
+							padding-top:8px;
+							padding-bottom:-5px;">Refresh</button>
+
+						</div>
+					</div>
+					
+					
+					
                      <!--Credit line-->
 
                     <center>
@@ -103,6 +125,8 @@
 		
 		
 <script>
+	
+function Rfs() {
   console.log("Updating.....!!");
   var mylist1 = document.createElement("LI");
   var blank1 = document.createElement("HR");
@@ -112,6 +136,7 @@
   document.getElementById("spam").appendChild(mylist1);
   document.getElementById("spam").appendChild(blank1);
   localStorage.clear();
+}
 </script>
 
 		
