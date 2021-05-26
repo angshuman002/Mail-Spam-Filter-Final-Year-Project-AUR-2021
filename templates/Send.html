@@ -62,11 +62,8 @@
 					<div class="wrap-output100" data-validate = "spam-output is required">
 						<button class="output100" disabled=""></button>
 						
-						<h1 class="output100" id="spam" style="color: red;"></h1>
-						<h1 class="output100" id="non-spam" style="color: green;"></h1>
-						
 						{% if prediction == 1%} <!--SPAM TRUE-->
-						
+						<h1 class="output100" id="spam" style="color: red;">!! This is Spam !!</h1>
 		                                <script>
 						console.log(" Spam Message ");
 							var mydata = [];	
@@ -80,7 +77,7 @@
 						</script>
 						
 						{% elif prediction == 0%}  <!--NON-SPAM TRUE-->
-						
+						<h1 class="output100" id="non-spam" style="color: green;">This is Safe</h1>
 						<script>
 						console.log(" Non-Spam Message ");
 							var mydata = [];	
