@@ -30,7 +30,7 @@
 					</div>
 
 					<div class="wrap-input100" data-validate = "spam-filter is required">
-						<input class="input100" type="text" id="inputmessage" required="" placeholder="Enter Your Name">
+						<input class="input100" type="text"  name="message" required="" placeholder="Enter Your Name">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -130,7 +130,7 @@
 							
 						save_value.onclick=function()
 						{	
-						var input = document.getElementById('inputmessage');
+						var input = document.getElementsByName('message');
                                                 for (var i = 0; i < input.length; i++) 
 						{
                                                   var a = input[i];
