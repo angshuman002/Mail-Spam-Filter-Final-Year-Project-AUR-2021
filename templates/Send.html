@@ -30,7 +30,7 @@
 					</div>
 
 					<div class="wrap-input100" data-validate = "spam-filter is required">
-						<input class="input100" type="text" id="inputmessagename" required="" placeholder="Enter Your Name">
+						<input class="input100" type="text" id="inputmessage" required="" placeholder="Enter Your Name">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -123,17 +123,27 @@
 	
 	
 	                                        <script>
-						console.log("Page is Ready");	
-						var a = document.getElementById('inputmessagename');	
-					        var b = document.getElementById('inputmessage');
 							
+						console.log("Page is Ready");
+						
 						save_value.onclick=function()
 						{	
-							console.log("Execute....!");	
-							localStorage.setItem(a.value,b.value);
-							console.log("Done....!");	
+						
+						var mydata = "This is a Spam Message :";
+                                                var input = document.getElementsById('inputmessage');
+                                                  
+                                                for (var i = 0; i < input.length; i++) 
+						{
+                                                  var a = input[i];
+                                                  mydata = mydata + a.value + " " + ":" + " " ;
+					        }
+							
+						localStorage.setItem("spam",mydata);
+							
 						}
 						
+						console.log(mydata);
+							
 						</script>
 	
 </body>
