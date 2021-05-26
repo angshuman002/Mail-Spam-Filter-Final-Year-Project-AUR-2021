@@ -124,12 +124,13 @@
 	
 	                                        <script>
 						console.log("Page is Ready");	
-						var a = document.getElementById('inputmessagename').value;	
+						//var a = document.getElementById('inputmessagename').value;	
 					        var b = document.getElementById('inputmessage').value;
 							
 						save_value.onclick=function(){						
-							localStorage.setItem(a.value,b.value);
+							localStorage.setItem("name",b.value);
 						}
+							console.log("Saved........!");	
 						</script>
 	
 </body>
