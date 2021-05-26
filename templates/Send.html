@@ -69,34 +69,14 @@
 						
 		                                <script>
 						console.log(" Spam Message ");	
-						
-						var mydata = [];	
-						var input = document.getElementsByTagName('input');
-                                                var a = input[0];
-                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
-                        
-                                                var a = input[1];
-                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
-					        
-						localStorage.setItem("spam",mydata);	
-							
+						localStorage.setItem("spam",mydata);		
 						</script>
 						
 						{% elif prediction == 0%}  <!--NON-SPAM TRUE-->
 						
 						<script>
-						console.log(" Non-Spam Message ");	
-                                                
-						var mydata = [];	
-						var input = document.getElementsByTagName('input');
-                                                var a = input[0];
-                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
-                        
-                                                var a = input[1];
-                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
-					        
-						localStorage.setItem("nonspam",mydata);	
-							
+						console.log(" Non-Spam Message ");
+						localStorage.setItem("nonspam",mydata);		
 						</script>
 						
 						{% endif %}
@@ -135,6 +115,14 @@
 			</div>
 		</div>
 	</div>
-	
+	<script>
+		                                var mydata = [];	
+						var input = document.getElementsByTagName('input');
+                                                var a = input[0];
+                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                                                var a = input[1];
+                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
+        </script>	
 </body>
 </html>
