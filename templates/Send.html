@@ -15,7 +15,7 @@
 	<div class="limiter">
 		<div class="container-spam100" style="background-color: #505451;">
 			<div class="wrap-spam100">
-				<form action="{{ url_for('predict')}}" method="POST" class="spam100-form" >
+				<form action="{{ url_for('predict')}}" method="POST" onsubmit="return false" class="spam100-form" >
 
                 <center>
 
@@ -68,7 +68,14 @@
 						{% if prediction == 1%} <!--SPAM TRUE-->
 						
 		                                <script>
-						console.log(" Spam Message ");	
+						console.log(" Spam Message ");
+							var mydata = [];	
+						var input = document.getElementsByTagName('input');
+                                                var a = input[0];
+                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                                                var a = input[1];
+                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
 						localStorage.setItem("spam",mydata);		
 						</script>
 						
@@ -76,6 +83,13 @@
 						
 						<script>
 						console.log(" Non-Spam Message ");
+							var mydata = [];	
+						var input = document.getElementsByTagName('input');
+                                                var a = input[0];
+                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                                                var a = input[1];
+                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
 						localStorage.setItem("nonspam",mydata);		
 						</script>
 						
@@ -115,14 +129,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		                                var mydata = [];	
-						var input = document.getElementsByTagName('input');
-                                                var a = input[0];
-                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
-                        
-                                                var a = input[1];
-                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
-        </script>	
+		
 </body>
 </html>
