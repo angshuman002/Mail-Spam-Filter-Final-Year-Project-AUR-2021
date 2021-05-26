@@ -126,23 +126,24 @@
 							
 						console.log("Page is Ready");
 							
-						var intro = "This is a Spam Message By";
+						
 						var mydata = [];	
 						save_value.onclick=function()
 						{	
 						var input = document.getElementsByTagName('input');
-                                                for (var i = 0; i < input.length; i++) 
-						{
-                                                  var a = input[i];
-                                                  intro = intro + " " +  a.value + " " + ":" + " " ;
-					        }
+                                                var a = input[0];
+                        mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                        var a = input[1];
+                        mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
+					        
 						
-						mydata.push(intro);	
+						
 						localStorage.setItem("spam",mydata);
 							
 						}
 						
-						console.log(mydata);
+						console.log("Done.....!");
 							
 						</script>
 	
