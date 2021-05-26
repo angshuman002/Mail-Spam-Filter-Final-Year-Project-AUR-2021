@@ -11,11 +11,10 @@ app = Flask(__name__)
 def home():
 	return render_template('Home.html')
 
-@app.route('/Send.html')
+@app.route('/Send.html',methods=['POST'])
 def send():
 	return render_template('Send.html')
 
-@app.route('/predict',methods=['POST'])
 def predict():
 	if request.method == 'POST':
 		message = request.form['message']
