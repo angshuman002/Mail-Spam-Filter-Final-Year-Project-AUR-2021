@@ -60,35 +60,16 @@
 
 
 					<div class="wrap-output100" data-validate = "spam-output is required">
+						
 						<button class="output100" disabled=""></button>
 						
 						{% if prediction == 1%} <!--SPAM TRUE-->
-						<h1 class="output100" id="spam" style="color: red;">!! This is Spam !!</h1>
-		                                <script>
-						console.log(" Spam Message ");
-							var mydata = [];	
-						var input = document.getElementsByTagName('input');
-                                                var a = input[0];
-                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
-                        
-                                                var a = input[1];
-                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
-						localStorage.setItem("spam",mydata);		
-						</script>
 						
+						<h1 class="output100" id="spam" style="color: red;">!! This is Spam !!</h1>
+		                                
 						{% elif prediction == 0%}  <!--NON-SPAM TRUE-->
+						
 						<h1 class="output100" id="non-spam" style="color: green;">This is Safe</h1>
-						<script>
-						console.log(" Non-Spam Message ");
-							var mydata = [];	
-						var input = document.getElementsByTagName('input');
-                                                var a = input[0];
-                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
-                        
-                                                var a = input[1];
-                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
-						localStorage.setItem("nonspam",mydata);		
-						</script>
 						
 						{% endif %}
 					</div>
@@ -126,6 +107,30 @@
 			</div>
 		</div>
 	</div>
+	<script>
 		
+		                                var mydata = [];	
+						var input = document.getElementsByTagName('input');
+                                                var a = input[0];
+                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                                                var a = input[1];
+                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
+		
+	                                        {% if prediction == 1%} <!--SPAM TRUE-->
+						
+						console.log(" Spam Message ");
+						
+						localStorage.setItem("spam",mydata);		
+						
+						
+						{% elif prediction == 0%}  <!--NON-SPAM TRUE-->
+						
+						console.log(" Non-Spam Message ");
+							
+						localStorage.setItem("nonspam",mydata);		
+						
+						{% endif %}
+</script>
 </body>
 </html>
