@@ -8,7 +8,7 @@
 	<title>Pi-Mail | Inbox</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<link rel="icon" type="image/png" href="favicon.png"/>
+	
     <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 
@@ -136,6 +136,15 @@ function Rfs() {
   blank1.classList.add('new4');
   document.getElementById("spam").appendChild(mylist1);
   document.getElementById("spam").appendChild(blank1);
+	
+  var mylist2 = document.createElement("LI");
+  var blank2 = document.createElement("HR");
+  mylist2.innerHTML = localStorage.getItem('nonspam');
+  mylist2.classList.add('txt1');
+  blank2.classList.add('new4');
+  document.getElementById("non-spam").appendChild(mylist2);
+  document.getElementById("non-spam").appendChild(blank2);
+	
   localStorage.clear();
 }
 </script>
