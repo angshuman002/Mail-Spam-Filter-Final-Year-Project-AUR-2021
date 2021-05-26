@@ -43,7 +43,7 @@
 					</div>
 					<div class="wrap-output100" data-validate = "spam-output is required">
 						<ul class="txt1" id="non-spam">
-                                                    <li class="txt1" >Coffee</li>
+                                                   
                                                 </ul>
                     </center>
                 </form>
@@ -59,7 +59,7 @@
 					</div>
 					<div class="wrap-output100" data-validate = "spam-output is required">
 						<ul class="txt1" id="spam">
-                                                    <li class="txt1" >Coffee</li>
+                                                    
                                                 </ul>
 					</div>                
                     </center>
@@ -104,13 +104,16 @@
 		
 <script>
   console.log("Updating.....!!");
-  var mylist = document.createElement("LI");
-  mylist.innerHTML = localStorage.getItem('spam');
-  mylist.classList.add('txt1')
-  document.getElementById("spam").appendChild(mylist);
+  var mylist1 = document.createElement("LI");
+  var blank1 = document.createElement("HR");
+  mylist1.innerHTML = localStorage.getItem('spam');
+  mylist1.classList.add('txt1');
+  blank1.classList.add('new4');
+  document.getElementById("spam").appendChild(mylist1);
+  document.getElementById("spam").appendChild(blank1);
   localStorage.clear();
 </script>
-		
+
 		
 		
 </body>
