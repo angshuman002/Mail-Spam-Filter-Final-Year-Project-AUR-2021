@@ -183,6 +183,12 @@ iframe {
   padding: 0 20px;
 }
 
+.new4 {
+  border: 1px solid White;
+  width: 40%;
+}
+
+
 .output100 {
   font-family:  'Prompt', sans-serif;
   color: #333333;
