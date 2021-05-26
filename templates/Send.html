@@ -48,7 +48,7 @@
 
                     <div class="container-spam100-form-btn">
 						<div class="spam100-form-btn">
-							<input type="Submit" id="save_value" value="Send" 
+							<input type="Submit" value="Send" 
 							style="font-family:'Prompt', sans-serif;
 							font-size: 26px; 
 							color: #fff;
@@ -65,24 +65,39 @@
 						<h1 class="output100" id="spam" style="color: red;"></h1>
 						<h1 class="output100" id="non-spam" style="color: green;"></h1>
 						
-						{% if prediction == 1%}
+						{% if prediction == 1%} <!--SPAM TRUE-->
 						
 		                                <script>
 						console.log(" Spam Message ");	
-                                                       // document.getElementById('spam').innerHTML = b;
 						
+						var mydata = [];	
+						var input = document.getElementsByTagName('input');
+                                                var a = input[0];
+                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                                                var a = input[1];
+                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
+					        
+						localStorage.setItem("spam",mydata);	
+							
 						</script>
 						
-						<button class="output100" disabled="" style="color: red;">!..This is a Spam Message..!</button>
-						
-						{% elif prediction == 0%}
+						{% elif prediction == 0%}  <!--NON-SPAM TRUE-->
 						
 						<script>
 						console.log(" Non-Spam Message ");	
-                                                      //  document.getElementById('non-spam').innerHTML = b;
+                                                
+						var mydata = [];	
+						var input = document.getElementsByTagName('input');
+                                                var a = input[0];
+                                                mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
+                        
+                                                var a = input[1];
+                                                mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
+					        
+						localStorage.setItem("nonspam",mydata);	
 							
 						</script>
-						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
 						
 						{% endif %}
 					</div>
@@ -120,32 +135,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	                                        <script>
-							
-						console.log("Page is Ready");
-							
-						
-						var mydata = [];	
-						save_value.onclick=function()
-						{	
-						var input = document.getElementsByTagName('input');
-                                                var a = input[0];
-                        mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
-                        
-                        var a = input[1];
-                        mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
-					        
-						
-						
-						localStorage.setItem("spam",mydata);
-							
-						}
-						
-						console.log("Done.....!");
-							
-						</script>
 	
 </body>
 </html>
