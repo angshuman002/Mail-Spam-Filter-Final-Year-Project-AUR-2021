@@ -5,7 +5,7 @@
 	<title>Pi-Mail | Send</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<link rel="icon" type="image/png" href="favicon.png"/>
+	
     <link rel="stylesheet" type="text/css" href="static/style.css">
 
 </head>
@@ -13,7 +13,7 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-spam100" style="background-image: url('background.png'); background-color: #505451;">
+		<div class="container-spam100" style="background-color: #505451;">
 			<div class="wrap-spam100">
 				<form action="{{ url_for('predict')}}" method="POST" class="spam100-form" >
 
@@ -48,7 +48,7 @@
 
                     <div class="container-spam100-form-btn">
 						<div class="spam100-form-btn">
-							<input type="Submit" value="Send" 
+							<input type="Submit" id="save_value" value="Send" 
 							style="font-family:'Prompt', sans-serif;
 							font-size: 26px; 
 							color: #fff;
@@ -68,19 +68,18 @@
 						{% if prediction == 1%}
 						
 		                                <script>
-						
-							var b = document.getElementById('inputmessage').value;
-                                                        document.getElementById('spam').innerHTML = b;
+						console.log(" Spam Message ");	
+                                                       // document.getElementById('spam').innerHTML = b;
 						
 						</script>
+						
 						<button class="output100" disabled="" style="color: red;">!..This is a Spam Message..!</button>
 						
 						{% elif prediction == 0%}
 						
 						<script>
-						
-						        var b = document.getElementById('inputmessage').value;
-                                                        document.getElementById('non-spam').innerHTML = b;
+						console.log(" Non-Spam Message ");	
+                                                      //  document.getElementById('non-spam').innerHTML = b;
 							
 						</script>
 						<button class="output100" disabled="" style="color: green;">This is a Safe Message</button>
@@ -121,6 +120,16 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	                                        <script>
+						console.log("Page is Ready");	
+					        var b = document.getElementById('inputmessage').value;
+							
+						save_value.onclick=function(){						
+							localStorage.setItem(b.value);
+						}
+						</script>
 	
 </body>
 </html>
