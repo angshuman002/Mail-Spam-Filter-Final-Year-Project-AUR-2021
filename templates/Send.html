@@ -48,7 +48,7 @@
 
                     <div class="container-spam100-form-btn">
 						<div class="spam100-form-btn">
-							<input type="Submit" value="Send" 
+							<input type="Submit" onclick="storeup()" value="Send" 
 							style="font-family:'Prompt', sans-serif;
 							font-size: 26px; 
 							color: #fff;
@@ -108,8 +108,8 @@
 		</div>
 	</div>
 	<script>
-		
-		                                var mydata = [];	
+		function storeup(){
+		                                var mydata = [];
 						var input = document.getElementsByTagName('input');
                                                 var a = input[0];
                                                 mydata = mydata + " " + "Sender" + " " + ":" + " " + a.value + " " + ";" + " "+"<br>" ;
@@ -117,19 +117,26 @@
                                                 var a = input[1];
                                                 mydata = mydata + " " + "Message" + " " + ":" + " " +  a.value + " " + ";" + "<br>" ;
 		
+		                                sessionStorage.setItem("temp",mydata);
+		
+		                  }
+		
+		
+		                              
 	                                        {% if prediction == 1%} <!--SPAM TRUE-->
 						
 						console.log(" Spam Message ");
-						
-						localStorage.setItem("spam",mydata);		
-						
+						var mydatatemp = sessionStorage.getItem("temp");
+						localStorage.setItem("spam",mydatatemp);		
+						sessionStorage.clear();
 						
 						{% elif prediction == 0%}  <!--NON-SPAM TRUE-->
 						
 						console.log(" Non-Spam Message ");
-							
-						localStorage.setItem("nonspam",mydata);		
-						
+						var mydatatemp = sessionStorage.getItem("temp");	
+						localStorage.setItem("nonspam",mydatatemp);		
+						sessionStorage.clear();
+						 
 						{% endif %}
 </script>
 </body>
